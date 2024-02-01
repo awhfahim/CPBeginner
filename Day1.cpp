@@ -1,9 +1,19 @@
 #include <bits/stdc++.h> //NameSpace
 using namespace std;
 
-bool isAnagram(string str1, string str2)
+bool isAnagram(string s1, string s2)
 {
-    //Write your code here
+    vector <int> alpha(26, 0);
+    for(int i = 0; i < s1.length(); i++)
+    {
+        alpha[s1[i] - 'a']++;
+    }
+
+    for(int i = 0; i < s1.length(); i++)
+    {
+        alpha[s1[i] - 'a']--;
+    }
+
     return false;
 }
 
@@ -34,26 +44,58 @@ bool isPalindrome(string str)
     }
 }
 
+map<string, int> BookList()
+{
+    map <string,int> bookCount;
+
+    ///
+    //
+    //
+
+    return bookCount;
+}
+
 int main()
 {
     ///Palindrome Part
-    string name = "madama";
+    /*string name = "madama";
     if(isPalindrome(name) == true){
         cout << "This is a palindrome" << endl;
     }
     else
-        cout << "Not a palindrome" << endl;
+        cout << "Not a palindrome" << endl;*/
 
 
     ///Anagram Part
-    string str = "fired";
-    string str2 = "fried";
+    /*
+    string str = "fired"; ///defii
+    string str2 = "fried"; ///defir
 
     if(isAnagram(str,str2)){
         cout << "Yes";
     }
     else{
         cout << "No";
+    } */
+
+    map<char, int> occurs;
+
+
+    string str = "aljnaafkjdajksdyfqwkjhfnkajsdhfajwkehflkajsdhflkajwehf"; ///aaaabbbbcccccdddd
+
+    for(int i = 0; i < str.length(); i++)
+    {
+        occurs[str[i]] = occurs[str[i]] + 1;
+    }
+
+    for(auto forhad : occurs)
+    {
+        cout << forhad.first << " " << forhad.second << endl;
+        for(int i = 0; i < forhad.second; i++)
+        {
+            cout << forhad.first;
+        }
+        cout << endl;
     }
 
     return 0;
